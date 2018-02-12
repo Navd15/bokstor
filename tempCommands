@@ -1,0 +1,11 @@
+db.books.insert({
+Title:'A Force of Nature',
+author:'Richard Reeves',
+genre:'Science',
+description:'This engrossing read follows the life of Ernest Rutherford, who unlocked the interior of the atom, mentored Niels Bohr, and became the father of the nuclear age. “Wonderfully lucid… Captures the drama, personalities, and science” (New York Times bestselling author Walter Isaacson).',
+pages:'400',
+publication:'Oxford Press',
+image_url:'https://res.cloudinary.com/bookbub/image/upload/t_ci_new_browse_cover,f_auto,q_auto/v1517583001/pro_pbid_218779.jpg',
+buy_url:'https://r.bookbub.com/promotion_site_active_check/66719?retailer_id=1',
+
+}) 
