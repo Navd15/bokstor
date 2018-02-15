@@ -1,28 +1,28 @@
-var myApp=angular.module('myApp',['ng-rout']);
+var myApp=angular.module('myApp',['ngRoute']);
 myApp.config(function($routeProvider){
 
 $routeProvider.when('/',{
 controller:'BooksController',
-templateUrl:'view/book.html'
+templateUrl:'views/book.html'
 
 })
   .when('/book',{
-controller:'BooksConttroller',
+controller:'BooksController',
 templateUrl:'views/book.html'
 
   })
   .when('/book/details/:id',{
-  controller:'BooksConttroller',
+  controller:'BooksController',
   templateUrl:'views/book_detail.html'
 
   })
   .when('/book/add',{
-controller:'BooksConttroller',
+controller:'BooksController',
 templateUrl:'views/add_book.html'
 
   })
-  .when('/book/edit'
-  controller:'BooksConttroller',
+  .when('/book/edit',{
+  controller:'BooksController',
   templateUrl:'views/edit_book.html'
 
   })
