@@ -1,9 +1,13 @@
 var myApp=angular.module('myApp',['ngRoute']);
 myApp.config(function($routeProvider){
 
+
 $routeProvider.when('/',{
 controller:'BooksController',
 templateUrl:'views/book.html'
+})
+    .when('/admin',{
+    templateUrl:'./views/adminLogin.html'
 
 })
   .when('/book',{

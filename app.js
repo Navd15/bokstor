@@ -1,19 +1,30 @@
 var express =require('express');
 var app=express();
+var fs=require('fs');
+var chokidar=require('chokidar');
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
+
 Genre=require('./models/genres');
 Book=require('./models/books');
 
+chokidar.watch('.',{ignored: /(^|[\/\\])\../}).on('all',(event,path)=>{
+
+console.log(event,path);
+
+})
+
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/client'));
+
 //Connect to mongoose
 
 mongoose.connect('mongodb://localhost/bookstore');
 var db=mongoose.connection;
 
+
 app.get('/',function(req,res){
-res.send('Hello World');
+res.send("Could'nt resolve"+req.toString());
 });
 
 
@@ -96,8 +107,7 @@ app.get('/api/books/:_id',function(req,res){
 Book.getBookById(req.params._id,function(err,book){
   if(err){
 throw err;
-}
-  res.json(book);
+}res.json(book);
 });
 
 });
@@ -118,7 +128,7 @@ res.json(book);
 app.put('/api/books/:_id',function(req,res){
   var id=req.params._id;
   var book=req.body;
-Genre.updateBook(id,book,{},function(err,book){
+Book.updateBook(id,book,{},function(err,book){
 if(err){
 throw err;
 

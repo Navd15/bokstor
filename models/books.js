@@ -48,7 +48,7 @@ Books.find(callback).limit(limit);
   };
 //getBookById
   module.exports.getBookById=function(id,callback){
-Books.findById(id,callback) ;
+Books.findById(id,callback);
 
   };
 
@@ -59,6 +59,8 @@ module.exports.addBook=function(book,callback){
 Books.create(book,callback);
 
 };
+
+//update book
 
 module.exports.updateBook=function(id,book,options,callback){
 var query={

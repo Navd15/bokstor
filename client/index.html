@@ -1,54 +1,87 @@
 <!doctype html>
 <html ng-app="myApp">
 <head>
+  <meta name="viewport"  maximum-scale=1" content="width=device-width,initial-scale=1"/>
   <title>Bookstore</title>
-  <link  rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css"/>
-<link rel="stylesheet" href="css/style.css"/>
 
-<script type="text/javascript"  src="/bower_components/jquery/dist/jquery.js"></script>
-<script type="text/javascript"  src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script type="text/javascript"  src="/bower_components/angular/angular.js"> </script>
-<script type="text/javascript"  src="/bower_components/angular-route/angular-route.js"></script>
+  <link  rel="stylesheet" href="components/bootstrap-3.1.1-dist/css/bootstrap.css "/>
+  <link rel="stylesheet" href="css/style.css"/>
+<link href="https:/fonts.googleapis.com/css?family=PT+Sans|Lato:300|Playfair+Display" rel="stylesheet">
+<script type="text/javascript"  src="components/jquery/dist/jquery.js"></script>
+<script type="text/javascript"  src="components/bootstrap-3.1.1-dist/js/bootstrap.js"></script>
+  <script type="text/javascript"  src="components/angular/angular.js"> </script>
+<script type="text/javascript"  src="components/angular-route/angular-route.js"></script>
 
 <script type="text/javascript"  src="/app.js"> </script>
-<script type="text/javascript"  src="/controller/genres.js"> </script>
-  <script  type="text/javascript" src="/controller/books.js"> </script>
+<script type="text/javascript"  src="controller/genres.js"> </script>
+  <script  type="text/javascript" src="controller/books.js"> </script>
+
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="icon" type="image/png" href="views/images/icons/favicon.ico"/>-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/vendor/bootstrap/css/bootstrap.min.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/fonts/font-awesome-4.7.0/css/font-awesome.min.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/vendor/animate/animate.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/vendor/css-hamburgers/hamburgers.min.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/vendor/animsition/css/animsition.min.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/vendor/select2/select2.min.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/vendor/daterangepicker/daterangepicker.css">-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<link rel="stylesheet" type="text/css" href="views/css/util.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="views/css/main.css">-->
+    <!--<script src="views/vendor/jquery/jquery-3.2.1.min.js"></script>-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<script src="views/vendor/animsition/js/animsition.min.js"></script>-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<script src="views/vendor/bootstrap/js/popper.js"></script>-->
+    <!--<script src="views/vendor/bootstrap/js/bootstrap.min.js"></script>-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<script src="views/vendor/select2/select2.min.js"></script>-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<script src="views/vendor/daterangepicker/moment.min.js"></script>-->
+    <!--<script src="views/vendor/daterangepicker/daterangepicker.js"></script>-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<script src="views/vendor/countdowntime/countdowntime.js"></script>-->
+    <!--&lt;!&ndash;===============================================================================================&ndash;&gt;-->
+    <!--<script src="views/js/main.js"></script>-->
+
 
 </head>
-<body>
+<body >
 
+<header class="navbar ">
+<div class="navbar-header">
+    <nav class="navbar-default">
+        <a href="#" class="navbar-brand" style="text-decoration:none;margin-left:2px">BookStore</a>
+        <div style="float: right;padding: 5px" class=" form-inline">
 
+            <form class="form-inline">
+                <div class="glyphicon glyphicon-sort" style="color:cornflowerblue "></div>
+                <input placeholder="Search" type="search" class="btn btn-default ">
+                <button class="btn btn-default "><i style="color:cornflowerblue;" class="glyphicon glyphicon-search"></i></button>
+            </form>
+        </div>
 
-    <!-- <nav class="navbar navbar-dark bg-dark ">
-      <a class="navbar-brand" href="#">Bookstore</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    </nav>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/book.add">Add Book<span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
-    </nav> -->
-
-    <div class="container">
-
-      <div class="row starter-template">
-<div class=" col-xs-13">
-
-  <div ng-view=""></div>
 
 </div>
+</header>
 
+      <!-- <div class="row"> -->
+<!-- <div class="col"> -->
 
-    </div><!-- /.container -->
+  <div class="container-fluid" id="ngview" ng-view>
+
+  </div>
 
 </body>
 </html>

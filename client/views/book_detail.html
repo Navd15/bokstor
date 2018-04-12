@@ -1,0 +1,23 @@
+
+<div class="     panel panel-default" ng-init="getBook()">
+    <div class="panel-heading">
+        <h2 class="panel-title">{{bd.title}}</h2>
+    </div>
+    <div class="panel-body">
+        <div class="row container-fluid">
+           <div class="col-md-3">
+               <img style="box-shadow:0px 2px 10px rgba(0,0,0,0.31) " class="img-responsive img-thumbnail" src="{{bd.image_url}}">
+           </div>
+            <div class="col-md-7">
+            <p>{{bd.description}}</p>
+                <ul class="list-group">
+                    <li class="list-group-item"><b>Genre:</b> {{bd.genre}}</li>
+                    <li class="list-group-item"><b>Author:</b>  {{bd.author}}</li>
+                    <li class="list-group-item"><b>Publisher: </b> {{bd.publication}}</li>
+                    <li class="list-group-item"><b>Pages:</b>  {{bd.pages}}</li>
+                </ul>
+                <a class="btn btn-primary" href="{{bd.buy_url}}" target="_parent">Buy</a>
+            </div>
+        </div>
+    </div>
+</div>
