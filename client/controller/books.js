@@ -10,7 +10,7 @@ myApp.controller('BooksController',['$scope','$http','$location','$routeParams' 
 
     $scope.getBooks=function(){
   $http.get('/api/books').then(function (response){
-var d=$scope.bookan=response.data;
+var d=$scope .bookan=response.data;
   },function(error){
 
     console.log(error);

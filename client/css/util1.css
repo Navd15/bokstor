@@ -1,0 +1,25 @@
+.gofade{
+
+    animation:fade;
+    animation-duration: 1s;
+
+}
+
+@keyframes fade {
+    from{opacity:1 }
+    to{opacity: 0}
+
+
+}
+
+.gofadein{
+   animation: fadein;
+    animation-duration:0.5s;
+
+}@keyframes fadein {
+
+     from{opacity: 0}
+     to{opacity:1}
+
+
+ }
