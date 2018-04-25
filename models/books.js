@@ -31,6 +31,7 @@ type:String
 buy_url:{
 type:String
 
+
 },
 
 create_date:{
@@ -40,8 +41,12 @@ type:Date,
 
 
 });
-var Books=module.exports =mongoose.model('Books',bookSchema);
+
+
+var Books=module.exports=mongoose.model('Books',bookSchema);
+
   //get books
+
   module.exports.getBooks=function(callback,limit){
 Books.find(callback).limit(limit);
 
