@@ -30,6 +30,11 @@ templateUrl:'views/add_book.html'
   templateUrl:'views/edit_book.html'
 
   })
+    .when('/admin/listBooks',{
+      controller:'adminController',
+        templateUrl:''
+
+    })
   .otherwise({
 redirectTo:'/'
 

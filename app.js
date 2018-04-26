@@ -1,18 +1,12 @@
 var express =require('express');
 var app=express();
 var fs=require('fs');
-var chokidar=require('chokidar');
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
 
 Genre=require('./models/genres');
 Book=require('./models/books');
 
-chokidar.watch('.',{ignored: /(^|[\/\\])\../}).on('all',(event,path)=>{
-
-console.log(event,path);
-
-})
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/client'));
@@ -21,7 +15,6 @@ app.use(express.static(__dirname+'/client'));
 
 mongoose.connect('mongodb://localhost/bookstore');
 var db=mongoose.connection;
-
 
 app.get('/',function(req,res){
 res.send("Could'nt resolve"+req.toString());
@@ -151,6 +144,9 @@ res.json(book);
 
 
 });
+
+
+
 
 app.listen(3000);
 console.log("Running on port 3000");
