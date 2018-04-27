@@ -3,7 +3,9 @@ var app=express();
 var fs=require('fs');
 var bodyParser=require('body-parser');
 var mongoose=require('mongoose');
-
+require('chokidar').watch('.', {ignored: /[\/\\]\./}).on('all', function(event, path) {
+    console.log(event, path);
+});
 Genre=require('./models/genres');
 Book=require('./models/books');
 

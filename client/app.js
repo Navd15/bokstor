@@ -32,7 +32,7 @@ templateUrl:'views/add_book.html'
   })
     .when('/admin/listBooks',{
       controller:'adminController',
-        templateUrl:''
+        templateUrl:'views/listBooks.html'
 
     })
   .otherwise({
