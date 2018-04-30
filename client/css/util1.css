@@ -23,3 +23,11 @@
 
 
  }
+
+.selector{
+    visibility: hidden;
+
+}
+.selector_v{
+    visibility: visible;
+}

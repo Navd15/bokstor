@@ -2,16 +2,37 @@
 <link rel="stylesheet" href="css/util1.css">
 <script type="application/javascript" src="js/animations.js"></script>
 
+<script >
+  $('#by').on('click',function(){
+
+  $('#selector').toggleClass('selector','selector_v');
+  });
+
+</script>
+
 <header class="navbar ">
 
   <div class="navbar-header">
     <nav class="navbar-default">
       <a href="#"  class="navbar-brand text-center" style="text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
-      <div style="float: right;padding: 5px" class=" form-inline">
+      <span style="float: right;padding: 5px" class=" form-inline">
         <form class="form-inline">
-          <div class="glyphicon glyphicon-sort" style="color:cornflowerblue"></div>
-          <input placeholder="Search" type="search" class="btn btn-default ">
+
+<span>
+  <select class="selector" id="selector" ng-model="category" >
+            <option value="">Search Attribute</option>
+            <option name="genre">Genre</option>
+            <option name="author">Author</option>
+</select>
+          <div id="by" class="glyphicon glyphicon-sort" style="color:cornflowerblue"></div>
+
+      </span>
+
+          <input placeholder="Search By {{category}} :" type="search" class="btn btn-default ">
+
           <button class="btn btn-default "><i style="color:cornflowerblue;" class="glyphicon glyphicon-search"></i></button>
+
+
           <div class="glyphicon glyphicon-align-justify" style="color:cornflowerblue"></div>
           <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
