@@ -97,6 +97,17 @@ throw err;
 
 });
 
+app.get('/api/books_filter/:filter',function(req,res){
+  var attr=req.params.filter;
+    console.log(attr);
+    Book.findBookByAttrib(attr,function(err,result){
+      if(err)
+        throw err;
+      res.json(result)
+    })
+
+});
+
 //get book at api/bookId
 app.get('/api/books/:_id',function(req,res){
 Book.getBookById(req.params._id,function(err,book){
@@ -120,6 +131,8 @@ res.json(book);
 
 });
 
+
+
 app.put('/api/books/:_id',function(req,res){
   var id=req.params._id;
   var book=req.body;
@@ -131,24 +144,27 @@ throw err;
 res.json(book);
 
 });
+
+
+});
+
+
 app.delete('/api/genres/:_id',function(req,res){
-var id=req.params._id;
-Book.removeBook(id,function(err,book){
-if(err){
+    var id=req.params._id;
+    Book.removeBook(id,function(err,book){
+        if(err){
 
-  throw err;
-}
+            throw err;
+        }
 
-res.json(book);
-});
-
-});
-
+        res.json(book);
+    });
 
 });
 
-
-
+app.get('*',(req,res)=>{
+res.end("NO RESULT")
+})
 
 app.listen(3000);
 console.log("Running on port 3000");

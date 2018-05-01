@@ -57,7 +57,19 @@ Books.findById(id,callback);
 
   };
 
-// add book
+  // getBooksByAttrib
+module.exports.findBookByAttrib=function(attrib,callback){
+var filters=attrib.split(':');
+var que=filters[0];
+var query={};
+query[que]=new RegExp(filters[1],'i');
+
+console.log(query);
+  Books.find(query,callback);
+}
+
+
+//add book
 
 module.exports.addBook=function(book,callback){
 

@@ -9,6 +9,8 @@ templateUrl:'views/book.html'
     .when('/admin',{
     templateUrl:'./views/adminLogin.html'
 
+}).when('/login',{
+  templateUrl:'views/dual.html'
 })
   .when('/book',{
 controller:'BooksController',
@@ -35,8 +37,4 @@ templateUrl:'views/add_book.html'
         templateUrl:'views/listBooks.html'
 
     })
-  .otherwise({
-redirectTo:'/'
-
-  })
 })
