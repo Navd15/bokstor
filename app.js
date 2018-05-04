@@ -8,8 +8,6 @@ require('chokidar').watch('.', {ignored: /[\/\\]\./}).on('all', function(event, 
 });
 Genre=require('./models/genres');
 Book=require('./models/books');
-
-
 app.use(bodyParser.json());
 app.use(express.static(__dirname+'/client'));
 

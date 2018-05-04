@@ -2,35 +2,38 @@
 <link rel="stylesheet" href="css/util1.css">
 <script type="application/javascript" src="js/animations.js"></script>
 
-<script >
-  $('#by').on('click',function(){
+<script>
+    $('#by').on('click', function () {
 
-  $('#selector').toggleClass('selector','selector_v');
-  });
+        $('#selector').toggleClass('selector', 'selector_v');
+    });
 
 </script>
 
 <header class="navbar ">
 
-  <div class="navbar-header">
-    <nav class="navbar-default">
-      <a href="#"  class="navbar-brand text-center" style="text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
-      <span style="float: right;padding: 5px" class=" form-inline">
+    <div class="navbar-header">
+        <nav class="navbar-default">
+            <a href="#" class="navbar-brand text-center" style="text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
+            <span style="float: right;padding: 5px" class=" form-inline">
         <form class="form-inline">
 
 <span>
-  <select class="selector" id="selector" ng-model="category" >
+  <select class="selector" id="selector" ng-model="category">
             <option value="">Search Attribute</option>
-            <option name="genre">Genre</option>
-            <option name="author">Author</option>
+            <option value="genre">Genre</option>
+            <option value="author">Author</option>
+            <option value="title">Title</option>
+
 </select>
           <div id="by" class="glyphicon glyphicon-sort" style="color:cornflowerblue"></div>
 
       </span>
 
-          <input placeholder="Search By {{category}} :" type="search" class="btn btn-default ">
+          <input ng-model="search" placeholder="Search By {{category}} :" type="search" class="btn btn-default ">
 
-          <button class="btn btn-default "><i style="color:cornflowerblue;" class="glyphicon glyphicon-search"></i></button>
+          <button ng-click="filter()" class="btn btn-default "><i style="color:cornflowerblue;"
+                                              class="glyphicon glyphicon-search"></i></button>
 
 
           <div class="glyphicon glyphicon-align-justify" style="color:cornflowerblue"></div>
@@ -42,36 +45,37 @@
             <a href="#">Contact</a>
           </div>
         </form>
-      </div>
+    </div>
     </nav>
-  </div>
+    </div>
 </header>
 
 <div id="fadethis" class="container-fluid">
-<div class="panel panel-default" ng-init="getBooks()">
-  <div class="panel-heading">
-    <h2 class="panel-title">Latest Books</h2>
-  </div>
-<div class="panel-body">
-  <div class="row container-fluid">
-    <div ng-repeat="book in bookan">
-      <div class="col-md-6">
-        <div class="col-md-6 container-fluid">
-          <h4>{{book.title}}</h4>
-          <p style="white-space: nowrap;overflow:hidden;
-    text-overflow:ellipsis;
-}" >{{book.description}}</p>
-          <a class="btn btn-primary" id="viewDetails" href="#!/book/details/{{book._id}}">View Details</a>
+    <div class="panel panel-default" ng-init="[getBooks(),Heading='Latest Books']">
+        <div class="panel-heading">
+            <h2 class="panel-title">{{Heading}}</h2>
         </div>
-       <div style="padding: 10px" class="col-md-5 container-fluid">
-         <img style="padding:1px" class="img-thumbnail img-responsive" src="{{book.image_url}}">
-       </div>
-      </div>
+        <div class="panel-body">
+            <div class="row container-fluid">
+                <div ng-repeat="book in bookan">
+                    <div class="col-md-6">
+                        <div class="col-md-6 container-fluid">
+                            <h4>{{book.title}}</h4>
+                            <p style="white-space: nowrap;overflow:hidden;
+    text-overflow:ellipsis;
+}">{{book.description}}</p>
+                            <a class="btn btn-primary" id="viewDetails" href="#!/book/details/{{book._id}}">View
+                                Details</a>
+                        </div>
+                        <div style="padding: 10px" class="col-md-5 container-fluid">
+                            <img style="padding:1px" class="img-thumbnail img-responsive" src="{{book.image_url}}">
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-</div>
 </div>
 
 
