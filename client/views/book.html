@@ -14,13 +14,13 @@
 
     <div class="navbar-header">
         <nav class="navbar-default">
-            <a href="#" class="navbar-brand text-center" style="text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
+            <a href="#" class="navbar-brand shado text-center" style="height: 100%; text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
             <span style="float: right;padding: 5px" class=" form-inline">
         <form class="form-inline">
 
 <span>
-  <select class="selector" id="selector" ng-model="category">
-            <option value="">Search Attribute</option>
+  <select class="selector btn btn-default shado" id="selector" ng-model="category">
+            <option value="">Search</option>
             <option value="genre">Genre</option>
             <option value="author">Author</option>
             <option value="title">Title</option>
@@ -30,7 +30,7 @@
 
       </span>
 
-          <input ng-model="search" placeholder="Search By {{category}} :" type="search" class="btn btn-default ">
+          <input ng-model="search" placeholder="Search By {{category}} :" type="search" class="shado btn btn-default ">
 
           <button ng-click="filter()" class="btn btn-default "><i style="color:cornflowerblue;"
                                               class="glyphicon glyphicon-search"></i></button>
@@ -54,23 +54,24 @@
     <div class="panel panel-default" ng-init="[getBooks(),Heading='Latest Books']">
         <div class="panel-heading">
             <h2 class="panel-title">{{Heading}}</h2>
+
         </div>
-        <div class="panel-body">
-            <div class="row container-fluid">
-                <div ng-repeat="book in bookan">
-                    <div class="col-md-6">
-                        <div class="col-md-6 container-fluid">
-                            <h4>{{book.title}}</h4>
-                            <p style="white-space: nowrap;overflow:hidden;
-    text-overflow:ellipsis;
-}">{{book.description}}</p>
+        <div class="panel-body container-fluid">
+            <div class="row " >
+                <div style="margin: 20px"  ng-repeat="book in bookan">
+                    <div style="align-content: center; margin: 20px;padding: 5px" class="shado col-md-5">
+                        <div class="col-md-5 container-fluid">
+                            <h4 style="white-space:pre-line;overflow:hidden;
+                            text-overflow:ellipsis" >{{book.title}}</h4>
+                            <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{book.description}}</p>
                             <a class="btn btn-primary" id="viewDetails" href="#!/book/details/{{book._id}}">View
                                 Details</a>
                         </div>
-                        <div style="padding: 10px" class="col-md-5 container-fluid">
-                            <img style="padding:1px" class="img-thumbnail img-responsive" src="{{book.image_url}}">
+                        <div style="padding: 10px" class="col-md-5">
+                            <img style="padding:1px;margin-left: 80px" class="img-thumbnail img-responsive" src="{{book.image_url}}">
                         </div>
                     </div>
+
 
                 </div>
             </div>

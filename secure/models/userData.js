@@ -2,10 +2,17 @@ var mongoose=require('mongoose');
 
 
 var userSchema=mongoose.Schema({
-    userId:{
+    name:{type:String,
+    required:true
+    },
+    emailId:{
         type:String,
-        require:true},
-
+        required:true
+    },
+    password:{
+        
+    }
+    
 
 
 })
