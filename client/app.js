@@ -20,7 +20,6 @@ templateUrl:'views/book.html'
   .when('/book/details/:id',{
   controller:'BooksController',
   templateUrl:'views/book_detail.html'
-
   })
   .when('/book/add',{
 controller:'BooksController',

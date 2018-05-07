@@ -51,10 +51,12 @@ var Books=module.exports=mongoose.model('Books',bookSchema);
 Books.find(callback).limit(limit);
 
   };
+
 //getBookById
   module.exports.getBookById=function(id,callback){
-Books.findById(id,callback);
 
+   Books.findById(id,callback);
+  
   };
 
   // getBooksByAttrib

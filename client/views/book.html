@@ -4,9 +4,18 @@
 
 <script>
     $('#by').on('click', function () {
-
         $('#selector').toggleClass('selector', 'selector_v');
     });
+
+//     $('#card').hover(function(){
+//         console.log(this);
+// $(this).removeClass('shado');
+
+//     },function(){
+//         console.log(this);
+//     });
+
+
 
 </script>
 
@@ -14,7 +23,8 @@
 
     <div class="navbar-header">
         <nav class="navbar-default">
-            <a href="#" class="navbar-brand shado text-center" style="height: 100%; text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
+            <a href="#" class="navbar-brand shado text-center"
+               style="height: 100%; text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
             <span style="float: right;padding: 5px" class=" form-inline">
         <form class="form-inline">
 
@@ -33,7 +43,7 @@
           <input ng-model="search" placeholder="Search By {{category}} :" type="search" class="shado btn btn-default ">
 
           <button ng-click="filter()" class="btn btn-default "><i style="color:cornflowerblue;"
-                                              class="glyphicon glyphicon-search"></i></button>
+                                                                  class="glyphicon glyphicon-search"></i></button>
 
 
           <div class="glyphicon glyphicon-align-justify" style="color:cornflowerblue"></div>
@@ -45,7 +55,7 @@
             <a href="#">Contact</a>
           </div>
         </form>
-    </div>
+            </span>
     </nav>
     </div>
 </header>
@@ -58,17 +68,18 @@
         </div>
         <div class="panel-body container-fluid">
             <div class="row " >
-                <div style="margin: 20px"  ng-repeat="book in bookan">
-                    <div style="align-content: center; margin: 20px;padding: 5px" class="shado col-md-5">
+                <div  style="margin:0.1%"ng-repeat="book in bookan" >
+                    <div  style=" margin:10px;padding: 5px;" class="shado col-md-5 container-fluid">
                         <div class="col-md-5 container-fluid">
-                            <h4 style="white-space:pre-line;overflow:hidden;
-                            text-overflow:ellipsis" >{{book.title}}</h4>
-                            <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{book.description}}</p>
+                            <h4>{{book.title}}</h4>
+                            <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+                                {{book.description}}</p>
                             <a class="btn btn-primary" id="viewDetails" href="#!/book/details/{{book._id}}">View
                                 Details</a>
                         </div>
-                        <div style="padding: 10px" class="col-md-5">
-                            <img style="padding:1px;margin-left: 80px" class="img-thumbnail img-responsive" src="{{book.image_url}}">
+                        <div  class="col-md-4">
+                            <img style="padding:1px;" class="img-thumbnail img-responsive"
+                                 src="{{book.image_url}}">
                         </div>
                     </div>
 

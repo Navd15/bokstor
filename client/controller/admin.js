@@ -1,1 +1,1 @@
-var myApp=angular.module('admin');
+var admin=angular.module('admin');
