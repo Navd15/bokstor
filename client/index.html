@@ -1,69 +1,71 @@
 <!doctype html>
 <html ng-app="myApp">
+
 <head>
-  <meta name="viewport"  maximum-scale=1" content="width=device-width,initial-scale=1"/>
+  <meta name="viewport" maximum-scale=1 " content="width=device-width,initial-scale=1 "/>
   <title>Bookstore</title>
 
-  <link  rel="stylesheet" href="components/bootstrap-3.1.1-dist/css/bootstrap.css "/>
-  <link rel="stylesheet" href="css/style.css"/>
-<link href="https:/fonts.googleapis.com/css?family=PT+Sans|Lato:300|Playfair+Display" rel="stylesheet">
-<script type="text/javascript"  src="components/jquery/dist/jquery.js"></script>
-<script type="text/javascript"  src="components/bootstrap-3.1.1-dist/js/bootstrap.js"></script>
-  <script type="text/javascript"  src="components/angular/angular.js"> </script>
-<script type="text/javascript"  src="components/angular-route/angular-route.js"></script>
+  <link  rel="stylesheet " href="components/bootstrap-3.1.1-dist/css/bootstrap.css "/>
+  <link rel="stylesheet " href="css/style.css "/>
+<link href="https:/fonts.googleapis.com/css?family=PT+Sans|Lato:300|Playfair+Display " rel="stylesheet ">
+<script type="text/javascript "  src="components/jquery/dist/jquery.js "></script>
+<script type="text/javascript "  src="components/bootstrap-3.1.1-dist/js/bootstrap.js "></script>
+  <script type="text/javascript "  src="components/angular/angular.js "> </script>
+<script type="text/javascript "  src="components/angular-route/angular-route.js "></script>
 
-<script type="text/javascript"  src="/app.js"> </script>
-<script type="text/javascript"  src="controller/genres.js"> </script>
-  <script  type="text/javascript" src="controller/books.js"> </script>
-  <script type="text/javascript" src="controller/adminDash.js"></script>
+<script type="text/javascript "  src="/app.js "> </script>
+<script type="text/javascript "  src="controller/genres.js "> </script>
+  <script  type="text/javascript " src="controller/books.js "> </script>
+  <script type="text/javascript " src="controller/adminDash.js "></script>
+  <script type="text/javascript" src="../secure/controllers/dual.js"></script>
 
 
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="views/images/icons/favicon.ico"/>
+    <link rel="icon " type="image/png " href="views/images/icons/favicon.ico "/>
     <!--===============================================================================================-->
-    <!--<link rel="stylesheet" type="text/css" href="views/vendor/bootstrap/css/bootstrap.css">-->
+    <!--<link rel="stylesheet " type="text/css " href="views/vendor/bootstrap/css/bootstrap.css ">-->
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet " type="text/css " href="views/fonts/font-awesome-4.7.0/css/font-awesome.min.css ">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet " type="text/css " href="views/fonts/Linearicons-Free-v1.0.0/icon-font.min.css ">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/vendor/animate/animate.css">
+    <link rel="stylesheet " type="text/css " href="views/vendor/animate/animate.css ">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet " type="text/css " href="views/vendor/css-hamburgers/hamburgers.min.css ">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet " type="text/css " href="views/vendor/animsition/css/animsition.min.css ">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/vendor/select2/select2.min.css">
+    <link rel="stylesheet " type="text/css " href="views/vendor/select2/select2.min.css ">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet " type="text/css " href="views/vendor/daterangepicker/daterangepicker.css ">
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="views/css/util.css">
-    <link rel="stylesheet" type="text/css" href="views/css/main.css">
-    <script src="views/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet " type="text/css " href="views/css/util.css ">
+    <link rel="stylesheet " type="text/css " href="views/css/main.css ">
+    <script src="views/vendor/jquery/jquery-3.2.1.min.js "></script>
     <!--===============================================================================================-->
-    <script src="views/vendor/animsition/js/animsition.min.js"></script>
+    <script src="views/vendor/animsition/js/animsition.min.js "></script>
     <!--===============================================================================================-->
-    <script src="views/vendor/bootstrap/js/popper.js"></script>
-    <script src="views/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="views/vendor/bootstrap/js/popper.js "></script>
+    <script src="views/vendor/bootstrap/js/bootstrap.js "></script>
     <!--===============================================================================================-->
-    <script src="views/vendor/select2/select2.min.js"></script>
+    <script src="views/vendor/select2/select2.min.js "></script>
     <!--===============================================================================================-->
-    <script src="views/vendor/daterangepicker/moment.min.js"></script>
-    <script src="views/vendor/daterangepicker/daterangepicker.js"></script>
+    <script src="views/vendor/daterangepicker/moment.min.js "></script>
+    <script src="views/vendor/daterangepicker/daterangepicker.js "></script>
     <!--===============================================================================================-->
-    <script src="views/vendor/countdowntime/countdowntime.js"></script>
+    <script src="views/vendor/countdowntime/countdowntime.js "></script>
     <!--===============================================================================================-->
-    <script src="views/js/main.js"></script>
+    <script src="views/js/main.js "></script>
 
 
 </head>
 <body >
 
 
-      <!-- <div class="row"> -->
-<!-- <div class="col"> -->
+      <!-- <div class="row "> -->
+<!-- <div class="col "> -->
 
-  <div  id="ngview" ng-view>
+  <div  id="ngview " ng-view>
 
   </div>
 

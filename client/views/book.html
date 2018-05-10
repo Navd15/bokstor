@@ -23,40 +23,33 @@
 
     <div class="navbar-header">
         <nav class="navbar-default">
-            <a href="#" class="navbar-brand shado text-center"
-               style="height: 100%; text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
+            <a href="#" class="navbar-brand  text-center" style="height: 100%; text-decoration:none;font-family: 'Vollkorn', serif;">BookStore</a>
             <span style="float: right;padding: 5px" class=" form-inline">
-        <form class="form-inline">
+                <form class="form-inline">
 
-<span>
-  <select class="selector btn btn-default shado" id="selector" ng-model="category">
-            <option value="">Search</option>
-            <option value="genre">Genre</option>
-            <option value="author">Author</option>
-            <option value="title">Title</option>
+                    <span>
+                        <select class="selector btn btn-default shado" id="selector" ng-model="category">
+                            <option value="">Search</option>
+                            <option value="genre">Genre</option>
+                            <option value="author">Author</option>
+                            <option value="title">Title</option>
 
-</select>
-          <div id="by" class="glyphicon glyphicon-sort" style="color:cornflowerblue"></div>
+                        </select>
+                        <div id="by" class="glyphicon glyphicon-sort" style="color:cornflowerblue"></div>
 
-      </span>
+                    </span>
 
-          <input ng-model="search" placeholder="Search By {{category}} :" type="search" class="shado btn btn-default ">
+                    <input ng-model="search" placeholder="Search By {{category}} :" type="search" class="shado btn btn-default ">
 
-          <button ng-click="filter()" class="btn btn-default "><i style="color:cornflowerblue;"
-                                                                  class="glyphicon glyphicon-search"></i></button>
+                    <button ng-click="filter()" class="btn btn-default ">
+                        <i style="color:cornflowerblue;" class="glyphicon glyphicon-search"></i>
+                    </button>
 
 
-          <div class="glyphicon glyphicon-align-justify" style="color:cornflowerblue"></div>
-          <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
-          </div>
-        </form>
+                    <div class="glyphicon glyphicon-align-justify" style="color:cornflowerblue"></div>
+                </form>
             </span>
-    </nav>
+        </nav>
     </div>
 </header>
 
@@ -67,27 +60,35 @@
 
         </div>
         <div class="panel-body container-fluid">
-            <div class="row " >
-                <div  style="margin:0.1%"ng-repeat="book in bookan" >
-                    <div  style=" margin:10px;padding: 5px;" class="shado col-md-5 container-fluid">
-                        <div class="col-md-5 container-fluid">
-                            <h4>{{book.title}}</h4>
+            <div class="row container-fluid" style="margin-left:10%" ng-repeat="book in bookan" ng-if="$index%2==0">
+            <div class="row">
+                    <div  style="border-radius:3px; margin:10px;padding: 5px;" class="shado col-md-5 container-fluid">
+                        <div class="col-md-4 container-fluid">
+                            <h4>{{bookan[$index].title}}</h4>
                             <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
-                                {{book.description}}</p>
-                            <a class="btn btn-primary" id="viewDetails" href="#!/book/details/{{book._id}}">View
-                                Details</a>
+                                {{bookan[$index].description}}</p>
+                            <a class="btn btn-primary" id="viewDetails" href="#!/book/details/{{bookan[$index]._id}}">View Details
+                            </a>
                         </div>
-                        <div  class="col-md-4">
-                            <img style="padding:1px;" class="img-thumbnail img-responsive"
-                                 src="{{book.image_url}}">
+                        <div class="col-md-5" style="float:right">
+                            <img style="padding:1px;;" class="img-thumbnail img-responsive" ng-src="{{bookan[$index].image_url}}">
                         </div>
                     </div>
-
-
+                    <div ng-if="bookan[$index+1].title!=null" style="border-radius:3px; margin:10px;padding: 5px;" class="shado col-md-5 container-fluid">
+                        <div class="col-md-5 container-fluid">
+                            <h4>{{bookan[$index+1].title}}</h4>
+                            <p style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+                                {{bookan[$index+1].description}}</p>
+                            <a class="btn btn-primary" id="viewDetails" href="#!/book/details/{{bookan[$index+1]._id}}">View Details
+                            </a>
+                        </div>
+                        <div class="col-md-5" style="float:right">
+                            <img style="padding:1px;" class="img-thumbnail img-responsive" ng-src="{{bookan[$index+1].image_url}}">
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
-
-

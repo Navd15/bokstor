@@ -44,6 +44,7 @@ var d=$scope.bookan=response.data;
 
 
     $scope.addBook=function(){
+        
         $http.post('/api/books',$scope.book).then(function (response){
             alert("Book added,_id:"+this.book._id);
         },function(error){
