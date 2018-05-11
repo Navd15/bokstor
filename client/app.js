@@ -10,6 +10,7 @@ templateUrl:'views/book.html'
     templateUrl:'./views/adminLogin.html'
 
 }).when('/login',{
+  controller:'login',
   templateUrl:'views/dual.html'
 })
   .when('/book',{
