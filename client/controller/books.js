@@ -4,10 +4,10 @@ myApp.controller('BooksController',['$scope','$http','$location','$routeParams' 
 
   $scope.filter=function(){
       if(($scope.search==undefined||$scope.search=="")||$scope.category==undefined){
-      //do nothing
+      //do nothingDroid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'
           return "";
       }
-      else{
+      else{Sans-Serif
       var attrib = $scope.category + ':' + $scope.search;
 
       $http.get('/api/books_filter/' + attrib).then(function (response) {

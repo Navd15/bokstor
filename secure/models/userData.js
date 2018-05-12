@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var userSchema = new Schema({
+var userSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -29,10 +29,10 @@ var userSchema = new Schema({
         required: false
     }]
     ,
-    address: { type: String, required: true }
+    address: { type: String, required: false }
 })
 
-var users = mongoose.model('users', new userSchema);
+var users = mongoose.model('users', userSchema);
 
 
 
@@ -45,7 +45,14 @@ module.exports.getAllUsers = (callback, limit) => {
 // add user
 module.exports.addUser = (user, callback) => {
 
-    users.create(user, callback);
+var user = {
+    name: user.name,
+    emailid: user.email,
+    username: user.id,
+    password: user.password,
+}
+if()
+  users.create(user, callback);
 
 }
 
@@ -55,8 +62,8 @@ module.exports.updateUser = (id, credentials, options, callback) => {
     var query = { _id: id };
     var update = {
         name: credentials.name,
-        emailid: credentials.emailid,
-        username: credentials.username,
+        emailid: credentials.email,
+        username: credentials.id,
         password: credentials.password,
         address: credentials.address
 

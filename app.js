@@ -3,9 +3,11 @@ var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-require('chokidar').watch('.', { ignored: /[\/\\]\./ }).on('all', function (event, path) {
-  console.log(event, path);
-});
+var userLogin=require('./secure/models/userData');
+require('chokidar')
+  .watch('.', { ignored: /[\/\\]\./ }).on('all', function (event, path) {
+    console.log(event, path);
+  });
 Genre = require('./models/genres');
 Book = require('./models/books');
 app.use(bodyParser.json());
@@ -163,6 +165,21 @@ app.delete('/api/genres/:_id', function (req, res) {
 app.get('*', (req, res) => {
   res.end("NO RESULT")
 })
+
+
+//login endpoints
+
+app.post('/api/keepin_user/',(req,res)=>{
+var usrData=req.body;
+userLogin.addUser(usrData,(err,result)=>{
+if(err)
+throw err;  
+res.json();
+
+})
+
+})
+
 
 app.listen(3000);
 console.log("Running on port 3000");

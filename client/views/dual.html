@@ -29,32 +29,36 @@
 
             <div class="cont_back_info">
                 <div class="cont_img_back_grey">
-                    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d" alt="" />
+                    <img src="views/images/cover.jpg" alt="" />
                 </div>
 
             </div>
-            <div class="cont_forms" >
+            <div class="cont_forms">
                 <div class="cont_img_back_">
-                    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d" alt="" />
+                    <img src="views/images/cover.jpg" alt="" />
                 </div>
-                <div class="cont_form_login"`>
+                <div class="cont_form_login" `>
                     <h2>LOGIN</h2>
-                    <form name="login">
-                    <input type="text" ng-required="true"  name="userid" placeholder="Email" />
-                    <input type="password" ng-required="true" name="password" placeholder="Password" />
-                    <button class="btn_login" onclick="">LOGIN</button>
-                    </form>
+                  <form name="signin">
+                        <input spellcheck="false" type="text" ng-required="true" name="userid" placeholder="Email or User name" />
+                        <input type="password" ng-required="true" name="password" placeholder="Password" />
+                        <button class="btn_login" ng-click="">LOGIN</button>
+                   </form>
                 </div>
-
+               
                 <div class="cont_form_sign_up">
                     <h2>SIGN UP</h2>
-                    <form name="signup">
-                    <input type="text" name="email" placeholder="Email" required>
-                    <input type="text" name="userid" ng-required="true" minlength="4"  placeholder="User" />
-                    <input type="password" name="passcode" placeholder="Password" />
-                    <input type="password" name="cpasscode" placeholder="Confirm Password" />
-                    <button class="btn_sign_up"  >SIGN UP</button>
-                </form>
+                    
+                        <form  name="signup" >
+                        <input spellcheck="false" type="text"  name="name" ng-model="user.name" ng-model-options="{updateOn:'blur' }" placeholder="Name" required>    
+                        <input spellcheck="false" type="text" name="email" ng-model="user.email" ng-model-options="{updateOn:'blur' }" placeholder="Email" required>
+                        <input spellcheck="false" type="text" name="userid" ng-required="true" minlength="4" ng-model="user.id" ng-model-options="{updateOn:'blur' }" placeholder="User"required>
+                        <input type="password" name="passcode" ng-required="true"  ng-model="user.password" minlength="4" placeholder="Password" required>
+                        <input type="password" name="cpasscode" ng-required="true" placeholder="Confirm Password" required>
+                        <!-- <span ng-if=""></span> -->
+                        <button class="btn_sign_up" ng-click="show()" >SIGN UP</button>
+                    </form>
+                
                 </div>
 
             </div>
