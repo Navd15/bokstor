@@ -4,7 +4,6 @@ myApp.controller('BooksController',['$scope','$http','$location','$routeParams' 
 
   $scope.filter=function(){
       if(($scope.search==undefined||$scope.search=="")||$scope.category==undefined){
-      //do nothingDroid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'
           return "";
       }
       else{Sans-Serif

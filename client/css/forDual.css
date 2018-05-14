@@ -358,3 +358,12 @@ background text
     margin: 10px;
     margin-left: 30px;
 }
+
+.warning,input.ng-dirty.ng-invalid{
+background-color: #eee
+;color:red;
+text-align: center;
+padding: 10px 5px;
+width: 260px;
+border-radius: 2px;
+}

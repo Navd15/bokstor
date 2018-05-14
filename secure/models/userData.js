@@ -9,10 +9,6 @@ var userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    username: {
-        type: String,
-        required: true
-    },
     password: {
         type: String,
         required: true
@@ -48,10 +44,9 @@ module.exports.addUser = (user, callback) => {
 var user = {
     name: user.name,
     emailid: user.email,
-    username: user.id,
     password: user.password,
 }
-if()
+
   users.create(user, callback);
 
 }
@@ -63,7 +58,6 @@ module.exports.updateUser = (id, credentials, options, callback) => {
     var update = {
         name: credentials.name,
         emailid: credentials.email,
-        username: credentials.id,
         password: credentials.password,
         address: credentials.address
 

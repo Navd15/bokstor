@@ -162,9 +162,6 @@ app.delete('/api/genres/:_id', function (req, res) {
 
 });
 
-app.get('*', (req, res) => {
-  res.end("NO RESULT")
-})
 
 
 //login endpoints
@@ -179,6 +176,11 @@ res.json();
 })
 
 })
+
+app.get('*', (req, res) => {
+  res.end("NO RESULT")
+})
+
 
 
 app.listen(3000);
