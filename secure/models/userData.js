@@ -28,7 +28,7 @@ var userSchema = mongoose.Schema({
     address: { type: String, required: false }
 })
 
-var users = mongoose.model('users', userSchema);
+var users =module.exports.user= mongoose.model('users', userSchema);
 
 
 

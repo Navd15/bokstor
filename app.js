@@ -3,6 +3,7 @@ var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var check=require('./secure/models/helpersLogin');
 var userLogin=require('./secure/models/userData');
 require('chokidar')
   .watch('.', { ignored: /[\/\\]\./ }).on('all', function (event, path) {
@@ -167,13 +168,26 @@ app.delete('/api/genres/:_id', function (req, res) {
 //login endpoints
 
 app.post('/api/keepin_user/',(req,res)=>{
+  console.log("inside server");
 var usrData=req.body;
+check.emailCheck(usrData.email).then((result)=>{
+  console.log('Res:'+result);
+if(result){
+
+console.log({error:'Email is already registered'});
+  res.json({error:'Email is already registered'})
+
+}
+else
 userLogin.addUser(usrData,(err,result)=>{
-if(err)
-throw err;  
+  console.log({success:'User registered'})
+  
 res.json();
 
 })
+
+},(err)=>{console.log(err)})
+
 
 })
 
