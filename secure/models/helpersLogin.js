@@ -22,6 +22,30 @@ keepin.user.findOne({emailid:email},(err,res)=>{
 
 }
 
+credCheck(email,password){
+return new Promise((resolve,reject)=>{
+keepin.user.findOne({emailid:email},(err,result)=>{
+if(result!=null){
+if(result.password==password){
+resolve(true);
+
+}
+else
+resolve({err:504})
+
+}
+else
+resolve({err:404})
+
+
+})
+
+
+})
+
+}
+
+
 }
 
 

@@ -40,9 +40,9 @@
                 <div class="cont_form_login" `>
                     <h2>LOGIN</h2>
                     <form name="signin">
-                        <input spellcheck="false" type="text" ng-required="true" name="userid" placeholder="Email" />
-                        <input type="password" ng-required="true" name="password" placeholder="Password" />
-                        <button class="btn_login" ng-click="">LOGIN</button>
+                        <input spellcheck="false" type="text" ng-required="true" ng-model="lgnCreds.email" name="userid" ng-model-options="{updateOn:'blur' }" placeholder="Email" />
+                        <input type="password" ng-required="true" name="password" ng-model-options="{updateOn:'blur' }" ng-model="lgnCreds.password" placeholder="Password" />
+                        <button class="btn_login" ng-disabled="signin.userid.$pristine"ng-click="login()">LOGIN</button>
                     </form>
                 </div>
 

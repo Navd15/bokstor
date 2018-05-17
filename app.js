@@ -181,7 +181,7 @@ console.log({error:'Email is already registered'});
 else
 userLogin.addUser(usrData,(err,result)=>{
   console.log({success:'User registered'})
-  
+
 res.json();
 
 })
@@ -190,6 +190,18 @@ res.json();
 
 
 })
+app.post('/api/checkCreds/',(req,res)=>{
+var creds=req.body;
+  check.credCheck(creds.email,creds.password).then((result)=>{
+
+res.json(result);
+
+  },(err)=>{
+    console.log(err);
+  })
+
+})
+
 
 app.get('*', (req, res) => {
   res.end("NO RESULT")
