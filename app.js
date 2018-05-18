@@ -193,9 +193,7 @@ res.json();
 app.post('/api/checkCreds/',(req,res)=>{
 var creds=req.body;
   check.credCheck(creds.email,creds.password).then((result)=>{
-
 res.json(result);
-
   },(err)=>{
     console.log(err);
   })

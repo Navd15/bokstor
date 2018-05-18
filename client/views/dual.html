@@ -37,12 +37,14 @@
                 <div class="cont_img_back_">
                     <img src="views/images/cover.jpg" alt="" />
                 </div>
-                <div class="cont_form_login" `>
+                <div class="cont_form_login">
                     <h2>LOGIN</h2>
                     <form name="signin">
-                        <input spellcheck="false" type="text" ng-required="true" ng-model="lgnCreds.email" name="userid" ng-model-options="{updateOn:'blur' }" placeholder="Email" />
-                        <input type="password" ng-required="true" name="password" ng-model-options="{updateOn:'blur' }" ng-model="lgnCreds.password" placeholder="Password" />
-                        <button class="btn_login" ng-disabled="signin.userid.$pristine"ng-click="login()">LOGIN</button>
+                        <input class="email"  spellcheck="false" type="text" ng-required="true" ng-model="lgnCreds.email" name="userid" ng-model-options="{updateOn:'blur' }" placeholder="Email" />
+                       <div class="email hidden" style="color:white;background-color: slategrey;width:fit-content" >Email id is wrong or not registered</div>
+                        <input class="pass" type="password" ng-required="true" name="password" ng-model-options="{updateOn:'blur' }" ng-model="lgnCreds.password" placeholder="Password" />
+                        <div class="pass hidden" style="color:white;background-color: slategrey;width:fit-content" >Password is incorrect</div>
+                        <button class="btn_login" ng-click="login()">LOGIN</button>
                     </form>
                 </div>
 
@@ -50,7 +52,7 @@
                     <h2>SIGN UP</h2>
 
                     <form name="signup">
-                        <input spellcheck="false" type="text" name="name" ng-model="user.name" ng-model-options="{updateOn:'blur' }" placeholder="Name"
+                        <input  spellcheck="false" type="text" name="name" ng-model="user.name" ng-model-options="{updateOn:'blur'  }" placeholder="Name"
                             required>
                         <input spellcheck="false" id="eid" type="email" name="email" ng-model="user.email" ng-model-options="{updateOn:'blur' }"
                             placeholder="Email" required>

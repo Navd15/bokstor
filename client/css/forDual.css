@@ -2,6 +2,7 @@
 ---------------------------------------
 */
 
+
 * {
     margin: 0px auto;
     padding: 0px;
@@ -48,6 +49,10 @@
     box-shadow: 1px 10px 30px -10px rgba(0,0,0,0.5);
 }
 
+.redBorder{
+    border-style: solid;
+    border-color: red;
+    }
 .cont_forms {
     position: absolute;
     overflow: hidden;
@@ -302,9 +307,6 @@ background text
 .cont_forms_active_login {
     z-index: 2;
 }
-.cont_forms_active_login  >.cont_form_login {
-}
-
 .cont_form_sign_up {
     position: absolute;
     width: 320px;
@@ -367,3 +369,4 @@ padding: 10px 5px;
 width: 260px;
 border-radius: 2px;
 }
+

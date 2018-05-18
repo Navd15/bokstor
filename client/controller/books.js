@@ -6,7 +6,7 @@ myApp.controller('BooksController',['$scope','$http','$location','$routeParams' 
       if(($scope.search==undefined||$scope.search=="")||$scope.category==undefined){
           return "";
       }
-      else{Sans-Serif
+      else{
       var attrib = $scope.category + ':' + $scope.search;
 
       $http.get('/api/books_filter/' + attrib).then(function (response) {
