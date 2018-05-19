@@ -3,14 +3,23 @@ var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var session=require('express-session');
+
+//custom imports
 var check=require('./secure/models/helpersLogin');
 var userLogin=require('./secure/models/userData');
+
 require('chokidar')
   .watch('.', { ignored: /[\/\\]\./ }).on('all', function (event, path) {
     console.log(event, path);
   });
 Genre = require('./models/genres');
 Book = require('./models/books');
+app.use(sessiion({
+secret:'lagin',
+
+
+}))
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
 
