@@ -15,10 +15,10 @@ require('chokidar')
   });
 Genre = require('./models/genres');
 Book = require('./models/books');
-app.use(sessiion({
-secret:'lagin',
 
-
+//middleware 
+app.use(session({
+secret:'lagin'
 }))
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
@@ -28,6 +28,8 @@ app.use(express.static(__dirname + '/client'));
 mongoose.connect('mongodb://localhost/bookstore');
 var db = mongoose.connection;
 
+
+//REST end points
 app.get('/', function (req, res) {
   res.send("Could'nt resolve" + req.toString());
 });
@@ -91,8 +93,11 @@ app.delete('/api/genres/:_id', function (req, res) {
 
 });
 
+
 /*
+*
 book methods
+*
 */
 
 
@@ -199,6 +204,15 @@ res.json();
 
 
 })
+
+app.get('/api/fasstatus',(req,res)=>{
+if(req.session.fasya){
+  res.json({loged:true,who:req.session.fasya.id});
+}
+res.json({loged:false});
+
+
+})
 app.post('/api/checkCreds/',(req,res)=>{
 var creds=req.body;
   check.credCheck(creds.email,creds.password).then((result)=>{
@@ -213,8 +227,6 @@ res.json(result);
 app.get('*', (req, res) => {
   res.end("NO RESULT")
 })
-
-
 
 app.listen(3000);
 console.log("Running on port 3000");
