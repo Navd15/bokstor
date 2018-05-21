@@ -2,13 +2,20 @@ var app = angular.module('myApp');
 
 
 app.controller('login', ['$scope', '$http', '$location', '$routeParams', function ($scope, $http, $location, $routeParams) {
+   
+    $http.get('/api/fasstatus/').then((response)=>{
+console.log(response)
+        if(response.data.loged){
+            $location.path('/')
+
+}else
 
 var creds =$scope.lgnCreds={};
     var user = $scope.user = {};
     $scope.show = () => {
         $http.post('/api/keepin_user/', user).then((result) => {
     
-      console.log(result);registered
+      console.log(result);
         }, (err) => { console.log(err) }
         );
 
@@ -33,6 +40,10 @@ console.log('404');
 },(err)=>{});
 
     }
+
+
+    
+    })
 
 
 }])

@@ -13,15 +13,25 @@ require('chokidar')
   .watch('.', { ignored: /[\/\\]\./ }).on('all', function (event, path) {
     console.log(event, path);
   });
-Genre = require('./models/genres');
-Book = require('./models/books');
+Genre = require('./secure/models/genres');
+Book = require('./secure/models/books');
 
 //middleware 
 app.use(session({
-secret:'lagin'
+secret:'axv-dfde-fdvv',
+
+cookie:{
+  expires: 30 * 24 * 60 * 60 * 1000
+}
 }))
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
+//experimental
+
+// app.use((req,res,next)=>{
+// console.log(req.session.fasya);
+// next();
+// })
 
 //Connect to mongoose
 
@@ -205,10 +215,10 @@ res.json();
 
 })
 
-app.get('/api/fasstatus',(req,res)=>{
+app.get('/api/fasstatus/',(req,res)=>{
 if(req.session.fasya){
   res.json({loged:true,who:req.session.fasya.id});
-}
+}else
 res.json({loged:false});
 
 
@@ -216,6 +226,10 @@ res.json({loged:false});
 app.post('/api/checkCreds/',(req,res)=>{
 var creds=req.body;
   check.credCheck(creds.email,creds.password).then((result)=>{
+    if(result){
+      req.session.fasya={loged:true,id:creds.email}
+    }
+    
 res.json(result);
   },(err)=>{
     console.log(err);
