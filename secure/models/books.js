@@ -37,8 +37,15 @@ type:String
 create_date:{
 type:Date,
   default:Date.now
-}
+},
+no:{type:Number,default:0}
+,
+rating:{type:Number,default:0},
 
+reviews:[{
+  user:String,
+  comment:String
+}]
 
 });
 
