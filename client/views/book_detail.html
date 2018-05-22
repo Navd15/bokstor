@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/util1.css">
 <div class="alert gofadein">
-<div class="container-fluid " style="z-index:54">
+<div class="">
 
 <div class="panel panel-default"  ng-init="getBook()">
 
@@ -13,16 +13,29 @@
            <div class="col-md-3">
                <img style="box-shadow:0px 2px 10px rgba(0,0,0,0.31) " class="img-responsive img-thumbnail" src="{{bd.image_url}}">
            </div>
-            <div class="col-md-7">
+            <div class="col-md-6">
             <p>{{bd.description}}</p>
                 <ul class="list-group">
                     <li class="list-group-item"><b>Genre:</b> {{bd.genre}}</li>
                     <li class="list-group-item"><b>Author:</b>  {{bd.author}}</li>
                     <li class="list-group-item"><b>Publisher: </b> {{bd.publication}}</li>
                     <li class="list-group-item"><b>Pages:</b>  {{bd.pages}}</li>
+                    <li class="list-group-item"><b>Rating:</b>  {{bd.rating}}</li>
                 </ul>
                 <a class="btn btn-primary" href="{{bd.buy_url}}" target="_parent">Buy</a>
             </div>
+<div class="col-md-3 col-md-offset-0 panel panel-default">
+    <div class="panel-heading ">
+            <h3 class="panel-title">User Reviews</h3>
+    </div>
+
+<div class="panel-body"> 
+<div class="row"><h6>WTF</h6></div>
+    
+</div>
+
+</div>
+
         </div>
     </div>
 </div>
