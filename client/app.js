@@ -22,17 +22,17 @@ templateUrl:'views/book.html'
   controller:'BooksController',
   templateUrl:'views/book_detail.html'
   })
-  .when('/book/add',{
+  .when('/admin/book/add',{
 controller:'BooksController',
 templateUrl:'views/add_book.html'
 
   })
-  .when('/book/edit',{
+  .when('/admin/book/edit',{
   controller:'BooksController',
   templateUrl:'views/edit_book.html'
 
   })
-    .when('/admin/listBooks',{
+    .when('/admin/book/listBooks',{
       controller:'adminController',
         templateUrl:'views/listBooks.html'
 

@@ -9,7 +9,7 @@ console.log(response)
             $location.path('/')
 
 }else
-
+var counter=0;
 var creds =$scope.lgnCreds={};
     var user = $scope.user = {};
     $scope.show = () => {
@@ -41,6 +41,15 @@ console.log('404');
 
     }
 
+    $scope.forgotPassword=()=>{
+   ++counter;
+   console.log(counter);
+        $('.btn_login').addClass('hidden');
+if(counter>1){
+    alert(`Email sent to ${creds.email}`);
+    location.reload(true);}
+
+    }
 
     
     })
