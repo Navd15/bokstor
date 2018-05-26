@@ -9,10 +9,10 @@
 </header>
 
 
-<div style="margin-top:5%" class="jumbotron jumbotron-fluid container  container-fluid" ng-init="listBooks()">
+<div style="margin-top:5%" class="container-fluid" ng-init="listBooks()">
 <ul class="list-group" ng-repeat="book in list">
     <li class="list-group-item">{{book.title}}
-        <span ><a class="btn btn-default" href="!admin/edit/{{book._id}}">   Edit</a></span>
+        <span ><a class="btn btn-default" href="!admin/edit/{{book._id}}">Edit</a></span>
        <span ><a class="btn btn-default" href="!admin/delete/{{book._id}}">Delete</a></span>
     </li>
 </ul>
