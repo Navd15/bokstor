@@ -1,19 +1,74 @@
+<script type="application/javascript " src="js/forAdmin/dashboard.js"></script>
+<script type="text/css" src="js/forAdmin/dasboard.css"></script>
 
-<header class="navbar-header">
-    <nav class="navbar navbar-fixed-top">
+
+<header class="navbar ">
+
+    <div class="navbar-header">
+        <nav class="navbar-default">
+            <div id="dash" class="navbar-brand btn text-center" style="height: 100%; text-decoration:none;font-family: 'Vollkorn', serif;">Dashboard</div>
 
 
-    </nav>
+            <span style="float: right;padding: 5px" class=" form-inline">
+
+
+                <form class="form-inline">
+
+
+                    <span>
+
+                        <select class="selector btn btn-default shado" id="selector" ng-model="category">
+                            <option value="">Search</option>
+                            <option value="genre">Genre</option>
+                            <option value="author">Author</option>
+                            <option value="title">Title</option>
+
+                        </select>
+                        <div id="by" class="glyphicon glyphicon-sort" style="color:cornflowerblue"></div>
+
+                    </span>
+
+                    <input ng-model="search" placeholder="Search By {{category}} :" type="search" class="shado btn btn-default ">
+
+                    <button ng-click="filter()" class="btn btn-default ">
+                        <i style="color:cornflowerblue;" class="glyphicon glyphicon-search"></i>
+                    </button>
+
+
+
+                </form>
+            </span>
+        </nav>
+    </div>
 
 
 </header>
+<div class="hidden" id="nav" style="position:fixed;overflow-x: hidden;background:rgba(0,0,0,0.8);z-index:9;height:100%;
+    width: 200px;float: right">
+    <ul>
+        <li>  <div style=" margin-top: 2px;cursor: move" class="btn  text-center">
+            <h4 style="color:white">Users</h4>
+        </div></li>
+        <li>
+            <div style="margin-top: 2px;cursor: move" class="btn text-center" >
+                <h4 style="color:white">Books</h4>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<div id="main" style="">
 
 
-<div style="margin-top:5%" class="container-fluid" ng-init="listBooks()">
-<ul class="list-group" ng-repeat="book in list">
-    <li class="list-group-item">{{book.title}}
-        <span ><a class="btn btn-default" href="!admin/edit/{{book._id}}">Edit</a></span>
-       <span ><a class="btn btn-default" href="!admin/delete/{{book._id}}">Delete</a></span>
+    <div style="position:relative" class="container-fluid" ng-init="listBooks()">
+<ul class="list-group-item"  style="z-index: -8; " ng-repeat="book in list">
+    <li class="list-unstyled" >{{book.title}}
+        <span style="float:right" >
+        <span ><a  class="btn btn-default" href="!admin/edit/{{book._id}}">Edit</a></span>
+       <span style="float:right"><a class="btn btn-default" href="!admin/delete/{{book._id}}">Delete</a></span>
+    </span>
     </li>
 </ul>
+</div>
 </div>
