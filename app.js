@@ -6,6 +6,7 @@ var mongoose = require('mongoose');
 var session=require('express-session');
 
 //custom imports
+let su=require('./secure/models/forAdmin/suUsers');
 var check=require('./secure/models/helpersLogin');
 var userLogin=require('./secure/models/userData');
 
@@ -16,7 +17,8 @@ require('chokidar')
 Genre = require('./secure/models/genres');
 Book = require('./secure/models/books');
 
-//middleware 
+
+//middleware s
 app.use(session({
 secret:'axv-dfde-fdvv',
 
@@ -28,10 +30,10 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client'));
 //experimental
 
-// app.use((req,res,next)=>{
-// console.log(req.session.fasya);
-// next();
-// })
+app.use((req,res,next)=>{
+console.log(req.session.fasya);
+next();
+})
 
 //Connect to mongoose
 
@@ -233,6 +235,15 @@ var creds=req.body;
 res.json(result);
   },(err)=>{
     console.log(err);
+  })
+
+})
+
+app.get('/admin/suAll/',(req,res)=>{
+  su.all((err,result)=>{
+    if(!err)
+      res.json(result);
+
   })
 
 })

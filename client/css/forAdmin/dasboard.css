@@ -1,7 +1,7 @@
 .toLeft{
-    animation: mymove 1s infinite;
+    animation: mymove 8s linear;
 }
 @keyframes mymove {
-    from {left: 0px;}
-    to {left: 200px;}
+    from {margin-left: 0px;}
+    to {margin-left: 200px;}
 }
